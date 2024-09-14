@@ -2,7 +2,7 @@
   "name": "com.docutain.sdk.example.cordova",
   "displayName": "docutain-sdk-example-cordova",
   "description": "This example app shows how to integrate the Docutain SDK for Capacitor.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "INFOSOFT Informations- und Dokumentationssysteme GmbH <sdk@docutain.com>",
   "homepage": "https://sdk.docutain.com",
   "license": "SEE LICENSE IN LICENSE",
