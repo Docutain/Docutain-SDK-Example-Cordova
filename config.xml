@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="de.docutain.sdk_example_cordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android" >
+    <name>docutain-sdk-example-cordova</name>
+    <description>Sample Apache Cordova App</description>
+    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+	<platform name="android">
+       <preference name="android-minSdkVersion" value="21" />
+       <preference name="android-compileSdkVersion" value="34" />
+       <preference name="GradlePluginKotlinEnabled" value="true" />
+       <preference name="GradlePluginKotlinCodeStyle" value="official" />
+       <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
+            <application android:largeHeap="true" />
+        </edit-config>
+       <config-file target="AndroidManifest.xml" parent="/manifest"> 
+            <uses-permission android:name="android.permission.CAMERA" /> 
+            <uses-feature android:name="android.hardware.camera"/>
+       </config-file>
+    </platform>
+</widget>

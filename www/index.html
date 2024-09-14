@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, width=device-width, viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="light" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>Docutain SDK Example Cordova</title>
+  </head>
+  <body>
+    <!--DocumentSource.Dokumentenscanner-->
+    <div class="header">Docutain SDK Example</div>
+    <div class="panel" id="document-scanner">
+      <div class="panel-image">
+        <img src="img/document_scanner_black.png" />
+      </div>
+      <div>
+        <div class="panel-title">Document Scanner</div>
+        <div class="panel-text">
+          Starts the document scanner which provides automatic scanning of paper
+          documents.
+        </div>
+      </div>
+    </div>
+    <!--SampleMenue.DataExtraction-->
+    <div class="panel" id="data-extraction">
+      <div class="panel-image">
+        <img src="img/quick_reference_black.png" />
+      </div>
+      <div>
+        <div class="panel-title">Data Extraction</div>
+        <div class="panel-text">
+          Extract data, e.g. invoice data from a previously scanned or imported
+          (PDF or Image) document.
+        </div>
+      </div>
+    </div>
+    <!--SampleMenue.ReadOCR-->
+    <div class="panel" id="text-recognition">
+      <div class="panel-image">
+        <img src="img/insert_text_black.png" />
+      </div>
+      <div>
+        <div class="panel-title">Text Recognition</div>
+        <div class="panel-text">
+          Run OCR on the previously scanned or imported (PDF or Image) document
+          an get the recognized text.
+        </div>
+      </div>
+    </div>
+    <!--SampleMenue.WritePDF-->
+    <div class="panel" id="generate-pdf-document">
+      <div class="panel-image">
+        <img src="img/picture_as_pdf_black.png" />
+      </div>
+      <div>
+        <div class="panel-title">Generate PDF Document</div>
+        <div class="panel-text">
+          Generate a searchable (includes recognized text) PDF document out of
+          the scanned pages or imported image.
+        </div>
+      </div>
+    </div>
+    <div class="panel" id="settings">
+      <div class="panel-image">
+        <img src="img/settings_black.png" />
+      </div>
+      <div>
+        <div class="panel-title">Settings</div>
+        <div class="panel-text">
+          Configure color, scanner and editing of the SDK.
+        </div>
+      </div>
+    </div>
+    <div id="popup-import" class="popup">
+      <p>First, scan or import a document</p>
+      <ul>
+        <li>
+          <button href="" id="scan-document-camera">
+            Document scan camera
+          </button>
+        </li>
+        <li>
+          <button href="" id="scan-document-gallery">
+            Document scan gallery
+          </button>
+        </li>
+        <li>
+          <button id="pdf-import">PDF import</button>
+        </li>
+        <li>
+          <button id="image-import">Image import</button>
+        </li>
+      </ul>
+    </div>
+    <script src="cordova.js"></script>
+    <script src="js/helper.js"></script>
+    <script src="js/unittest.js"></script>
+    <script src="js/settings-config.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, width=device-width, viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="light" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="result-header">
+      <a id="back" href="index.html" class="triangle">&nbsp;</a>
+      <div class="title">Docutain SDK - Settings</div>
+    </div>
+    <div class="content">
+      <div class="devider">
+        <div class="panel-title">Scan settings</div>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Allow capture mode setting</div>
+          <div class="panel-text">
+            If true, the document scanner toolbar will display an item that
+            allows the user to switch between automatic and manual camera
+            triggering.
+          </div>
+        </div>
+        <label class="switch">
+          <input
+            type="checkbox"
+            id="AllowCaptureModeSetting"
+            aria-label="AllowCaptureModeSetting"
+          />
+          <span></span>
+        </label>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Auto capture</div>
+          <div class="panel-text">
+            If true, the camera will capture the image automatically at the
+            right moment.
+          </div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="AutoCapture" />
+          <span></span>
+        </label>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Auto crop</div>
+          <div class="panel-text">
+            If true, image gets automatically cropped if document was detected.
+            This applies only when importing images.
+          </div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="AutoCrop" />
+          <span></span>
+        </label>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Multi page</div>
+          <div class="panel-text">
+            If true, scanning multi page documents is possible. Set this to
+            false if you need to scan single page documents.
+          </div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="MultiPage" />
+          <span></span>
+        </label>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Pre capture focus</div>
+          <div class="panel-text">
+            If true, the camera will run a focus action right before taking the
+            image. This improves the quality of the scanned images, but
+            depending on the device, image capture might take a little bit
+            longer. This applies only to Android.
+          </div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="PreCaptureFocus" />
+          <span></span>
+        </label>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Default scan filter</div>
+          <div class="panel-text">
+            The default scan filter that will be used after scan.
+          </div>
+        </div>
+        <label class="select" id="ScanFilter">Illustration</label>
+      </div>
+      <div id="popup-scan-filter" class="popup">
+        <ul>
+          <li>
+            <button id="AUTO">Auto</button>
+          </li>
+          <li>
+            <button id="GRAY">Gray</button>
+          </li>
+          <li>
+            <button id="BLACKWHITE">Black & White</button>
+          </li>
+          <li>
+            <button id="ORIGINAL">Original</button>
+          </li>
+          <li>
+            <button id="TEXT">Text</button>
+          </li>
+          <li>
+            <button id="AUTO2">Auto 2</button>
+          </li>
+          <li>
+            <button id="ILLUSTRATION">Illustration</button>
+          </li>
+        </ul>
+      </div>
+      <div class="devider">
+        <div class="panel-title">Edit settings</div>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Allow page filter</div>
+          <div class="panel-text">
+            If false, the bottom toolbar will hide the filter page item.
+          </div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="AllowPageFilter" />
+          <span></span>
+        </label>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Allow page rotation</div>
+          <div class="panel-text">
+            If false, the bottom toolbar will hide the rotate page item.
+          </div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="AllowPageRotation" />
+          <span></span>
+        </label>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Allow page arrangement</div>
+          <div class="panel-text">
+            If false, the bottom toolbar will hide the arrange page item.
+          </div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="AllowPageArrangement" />
+          <span></span>
+        </label>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Allow page cropping</div>
+          <div class="panel-text">
+            If false, the bottom toolbar will hide the page cropping item.
+          </div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="AllowPageCropping" />
+          <span></span>
+        </label>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Page arrangement show delete button</div>
+          <div class="panel-text">
+            If true, each item of the page arrangement functionality will show a
+            delete button.
+          </div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="PageArrangementShowDeleteButton" />
+          <span></span>
+        </label>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Page arrangement show page number</div>
+          <div class="panel-text">
+            If true, each item of the page arrangement functionality will show
+            the page number.
+          </div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="PageArrangementShowPageNumber" />
+          <span></span>
+        </label>
+      </div>
+      <div class="devider">
+        <div class="panel-title">Color settings</div>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Color primary</div>
+          <div class="panel-text">
+            Used to tint progress indicators and dialog buttons.
+          </div>
+        </div>
+        <div class="color">
+          <div>
+            <input type="color" id="ColorPrimary_Light" /><br />
+            Light
+          </div>
+          <div>
+            <input type="color" id="ColorPrimary_Dark" />
+            Dark
+          </div>
+        </div>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Color secondary</div>
+          <div class="panel-text">
+            Used to tint selectable controls and the capture button.
+          </div>
+        </div>
+        <div class="color">
+          <div>
+            <input type="color" id="ColorSecondary_Light" /><br />
+            Light
+          </div>
+          <div>
+            <input type="color" id="ColorSecondary_Dark" />
+            Dark
+          </div>
+        </div>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Color on secondary</div>
+          <div class="panel-text">
+            Used to tint elements that reside on ColorSecondary, like the icon
+            of the capture button.
+          </div>
+        </div>
+        <div class="color">
+          <div>
+            <input type="color" id="ColorOnSecondary_Light" /><br />
+            Light
+          </div>
+          <div>
+            <input type="color" id="ColorOnSecondary_Dark" />
+            Dark
+          </div>
+        </div>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Color scan buttons layout background</div>
+          <div class="panel-text">
+            Used to tint the background of the layout containing the buttons of
+            the scan layout, like the capture button or torch button.
+          </div>
+        </div>
+        <div class="color">
+          <div>
+            <input
+              type="color"
+              id="ColorScanButtonsLayoutBackground_Light"
+            /><br />
+            Light
+          </div>
+          <div>
+            <input type="color" id="ColorScanButtonsLayoutBackground_Dark" />
+            Dark
+          </div>
+        </div>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Color scan buttons foreground</div>
+          <div class="panel-text">
+            Used to tint the foreground of the buttons of the scan layout, like
+            the torch button.
+          </div>
+        </div>
+        <div class="color">
+          <div>
+            <input type="color" id="ColorScanButtonsForeground_Light" /><br />
+            Light
+          </div>
+          <div>
+            <input type="color" id="ColorScanButtonsForeground_Dark" />
+            Dark
+          </div>
+        </div>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Color scan polygon</div>
+          <div class="panel-text">
+            Used to tint the polygon overlay which highlights the currently
+            detected document.
+          </div>
+        </div>
+        <div class="color">
+          <div>
+            <input type="color" id="ColorScanPolygon_Light" /><br />
+            Light
+          </div>
+          <div>
+            <input type="color" id="ColorScanPolygon_Dark" />
+            Dark
+          </div>
+        </div>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Color bottom bar background</div>
+          <div class="panel-text">
+            Used to tint the bottom toolbar background of the image editing
+            page.
+          </div>
+        </div>
+        <div class="color">
+          <div>
+            <input type="color" id="ColorBottomBarBackground_Light" /><br />
+            Light
+          </div>
+          <div>
+            <input type="color" id="ColorBottomBarBackground_Dark" />
+            Dark
+          </div>
+        </div>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Color bottom bar foreground</div>
+          <div class="panel-text">
+            Used to tint the buttons within the bottom toolbar of the image
+            editing page.
+          </div>
+        </div>
+        <div class="color">
+          <div>
+            <input type="color" id="ColorBottomBarForeground_Light" /><br />
+            Light
+          </div>
+          <div>
+            <input type="color" id="ColorBottomBarForeground_Dark" />
+            Dark
+          </div>
+        </div>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Color top bar background</div>
+          <div class="panel-text">Used to tint the top toolbar background.</div>
+        </div>
+        <div class="color">
+          <div>
+            <input type="color" id="ColorTopBarBackground_Light" /><br />
+            Light
+          </div>
+          <div>
+            <input type="color" id="ColorTopBarBackground_Dark" />
+            Dark
+          </div>
+        </div>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-title">Color top bar foreground</div>
+          <div class="panel-text">
+            Used to tint the elements contained in the top toolbar, like buttons
+            and titles.
+          </div>
+        </div>
+        <div class="color">
+          <div>
+            <input type="color" id="ColorTopBarForeground_Light" /><br />
+            Light
+          </div>
+          <div>
+            <input type="color" id="ColorTopBarForeground_Dark" />
+            Dark
+          </div>
+        </div>
+      </div>
+      <div class="devider">
+        <div class="panel-title">Reset</div>
+      </div>
+      <div class="panel2">
+        <div>
+          <div class="panel-text">Reset all settings to the default values</div>
+        </div>
+        <button id="Reset">Reset</button>
+      </div>
+    </div>
+  </body>
+  <script src="cordova.js"></script>
+  <script src="js/settings-config.js"></script>
+  <script src="js/settings.js"></script>
+</html>
