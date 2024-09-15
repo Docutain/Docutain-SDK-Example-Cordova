@@ -1,1 +1,1 @@
-{"plugins":["cordova-plugin-chooser","cordova-plugin-file","cordova-plugin-file-opener2","cordova-plugin-android-permissions","cordova-plugin-dialogs"]}
+{"plugins":["cordova-plugin-chooser","cordova-plugin-file","cordova-plugin-file-opener2","cordova-plugin-android-permissions","cordova-plugin-dialogs","@docutain/cordova-plugin-docutain-sdk"]}
