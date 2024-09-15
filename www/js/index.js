@@ -14,8 +14,7 @@
 
 document.addEventListener('deviceready', onDeviceReady, false);
 
-const License_Key = "+mPSJRuxM6p1NxrAaGOwY6DqxgwH0RoDv067WU1oNg62KudXhkq6Ik5wmMPK3KBsQ3/btxPp8I2W2wzVRcOVy97ErgAl5qNwmM5LAkuDXg88i4LlVzz5CnpvQJdeApX6BXWwBtzFZGQr1JWO";
-//const License_Key = "<YOUR_LICENSE_KEY_HERE>"
+const License_Key = "<YOUR_LICENSE_KEY_HERE>"
 
 const aSampleMenue = {
   DataExtraction: "DataExtraction",
@@ -61,7 +60,7 @@ async function showTrialLicenseAlert() {
       window.open('https://sdk.docutain.com/TrialLicense?Source=5243402', '_self');
       navigator.app.exitApp();
     },
-    "License key is required", "Open sdk.docutain.com/TrialLicense");
+    "License key is required", "GET TRIAL LICENSE");
 }
 
 async function InitDocutainSDK() {
