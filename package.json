@@ -26,14 +26,14 @@
       "cordova-plugin-file-opener2": {},
       "cordova-plugin-android-permissions": {},
       "cordova-plugin-dialogs": {},
-      "cordova-plugin-docutain-sdk": {}
+      "@docutain/cordova-plugin-docutain-sdk": {}
     }
   },
   "dependencies": {
     "cordova-ios": "5.1.1"
   },
   "devDependencies": {
-    "@docutain/cordova-plugin-docutain-sdk": "^1.0.0-beta.1",
+    "@docutain/cordova-plugin-docutain-sdk": "^0.0.1-beta.3",
     "cordova-android": "^13.0.0",
     "cordova-browser": "^7.0.0",
     "cordova-ourcodeworld-filebrowser": "github:ourcodeworld/cordova-ourcodeworld-filebrowser",
